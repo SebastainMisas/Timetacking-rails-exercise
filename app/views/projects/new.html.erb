@@ -1,0 +1,20 @@
+<center>
+	<h1>Add a new project</h1>
+	<a href="/projects">Back</a>
+
+	<form action="/projects" method="POST">
+	  <div>
+	    <label for="project_name">Name</label><br>
+	    <input type="text" name="project[name]" id="project_name">
+	  </div>
+
+	  <div>
+	    <label for="project_description">Description</label><br>
+	    <textarea name="project[description]" id="project_description"></textarea>
+	  </div>
+	  <input type="hidden" name="authenticity_token"
+	      value="<%= form_authenticity_token %>">
+
+	  <button type='submit'>Add</button>
+	</form>
+</center>

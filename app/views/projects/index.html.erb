@@ -1,9 +1,15 @@
+<center>
+<a href="/">Home</a><br>
+<a href="/project/new">Make New project</a>
 <ul>
+	<h1>List of projects<br>----------------------------</h1>
 	<% @projects_list.each do |project| %>
-	
-	<li>Projects name: <%= project.name %><br>
-		<% if project.description != nil %>
-		Description: <%= project.description%></li>
-		<% end %>
+		<li>Name: <%= project.name %><br>
+			<% if project.description != nil %>
+			Description: <%= project.description%></li>
+			<% end %>
+		<h1>---------------------------------------------</h1>
 	<% end %>
+	
 </ul>>
+</center>
