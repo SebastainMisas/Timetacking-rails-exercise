@@ -1,0 +1,9 @@
+<ul>
+	<% @projects_list.each do |project| %>
+	
+	<li>Projects name: <%= project.name %><br>
+		<% if project.description != nil %>
+		Description: <%= project.description%></li>
+		<% end %>
+	<% end %>
+</ul>>
