@@ -6,7 +6,11 @@ class ProjectsController < ApplicationController
 	end
 	def show
 		id = params[:id]
-		@proj = Project.find(id)
-	
+		@proj = Project.find_by(id: id)
+		if @proj == nil
+			redirect_to("/404")
+		else
+			render "show"
+		end
 	end
 end
