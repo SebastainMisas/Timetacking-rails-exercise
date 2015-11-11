@@ -4,12 +4,12 @@
 <ul>
 	<h1>List of projects<br>----------------------------</h1>
 	<% @projects_list.each do |project| %>
-		<li>Name: <%= project.name %><br>
+			Name: <%= project.name %><br>
 			<% if project.description != nil %>
 			Description: <%= project.description%></li>
 			<% end %>
 		<h1>---------------------------------------------</h1>
 	<% end %>
 	
-</ul>>
+</ul>
 </center>
