@@ -6,7 +6,8 @@
 	<% @projects_list.each do |project| %>
 			Name: <%= project.name %><br>
 			<% if project.description != nil %>
-			Description: <%= project.description%></li>
+			Description: <%= project.description%><br>
+			Entries: <a href="/projects/<%= project.id %>/entries">Click here</a>
 			<% end %>
 		<h1>---------------------------------------------</h1>
 	<% end %>

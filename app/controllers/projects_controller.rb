@@ -7,11 +7,10 @@ class ProjectsController < ApplicationController
 	def show
 		id = params[:id]
 		@proj = Project.find_by(id: id)
-		if @proj == nil
-			redirect_to("/404")
-		else
-			render "show"
-		end
+		
+		render "show"
+		
+
 	end
 	def new
 		render "new"
@@ -32,3 +31,4 @@ class ProjectsController < ApplicationController
 		params.require(:project).permit(:name, :description)
 	end
 end
+

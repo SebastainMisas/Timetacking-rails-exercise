@@ -1,0 +1,14 @@
+<center>
+	<h1>Timetracking tool</h1>
+	<a href="/">Home</a><br>
+	<a href="/projects">Projects</a>
+	<h2><%= @project.name %> entries<br>-------------------------</h2>
+	<ul>
+		
+			<% @entries.each do |entry|%>
+				<%= entry.hours %> hours
+				<%= entry.minutes %> minutes<br>
+			<% end %>
+
+	</ul>
+</center>
