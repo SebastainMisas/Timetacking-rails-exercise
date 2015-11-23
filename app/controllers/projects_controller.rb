@@ -13,19 +13,20 @@ class ProjectsController < ApplicationController
 
 	end
 	def new
+		@project = Project.new
 		render "new"
 	end
  
 	
 	def create
-		project = Project.new(project_params)
-		if project.save == true
+		@project = Project.new(project_params)
+		if @project.save 
 			redirect_to("/projects")
 		else
 			redirect_to("/404")
 		end
 	end
-	# private means none of this information is accessable outside of the controller
+# private means none of this information is not accessable outside of the controller
 	private
 	def project_params
 		params.require(:project).permit(:name, :description)

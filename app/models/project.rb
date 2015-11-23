@@ -3,5 +3,5 @@ class Project < ActiveRecord::Base
 	validates :name, presence: true
 	validates :name, uniqueness: true
 	validates :name, length: { maximum: 30 }
-
+	validates :description, presence: true
 end

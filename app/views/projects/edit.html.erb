@@ -1,7 +1,6 @@
 <center>
-	<h1>Add a new project</h1>
+	<h1>Edit project</h1>
 	<a href="/projects">Back</a>
-
 	<%= form_for @project do |f| %>
 		<%= f.label :name %><br>
 		<%= f.text_field :name %>
@@ -11,11 +10,12 @@
 
 		<%= f.label :description %><br>
 		<%= f.text_area :description %>
-		<% @project.errors[:description].each do |err| %>
+		<% @entries.errors[:description].each do |err| %>
 		<h1 class="err"><%= err %><h1>
 		<% end %><br>
 
-		<button type="submit">Post project</button>
+		<button type="submit">Update project</button>
 	
 	<% end %>
+	
 </center>
