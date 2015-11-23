@@ -62,7 +62,7 @@ class EntriesController < ApplicationController
 			end
 		end
 	end
-	def delete
+	def destroy
 		prog_id = params[:project_id]
 		entry_id = params[:id]
 		@project = Project.find_by(id: prog_id)
