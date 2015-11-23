@@ -10,7 +10,7 @@
 
 		<%= f.label :description %><br>
 		<%= f.text_area :description %>
-		<% @entries.errors[:description].each do |err| %>
+		<% @project.errors[:description].each do |err| %>
 		<h1 class="err"><%= err %><h1>
 		<% end %><br>
 
