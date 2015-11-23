@@ -62,6 +62,23 @@ class EntriesController < ApplicationController
 			end
 		end
 	end
+	def delete
+		prog_id = params[:project_id]
+		entry_id = params[:id]
+		@project = Project.find_by(id: prog_id)
+		if @project == nil
+			redirect_to("/404")
+		else
+			@entries = @project.entries.find_by(id: entry_id)
+			if @entries == nil
+				redirect_to("/404")
+			else 
+				if @entries.destroy
+					redirect_to "/projects/#{@project.id}/entries"
+				end
+			end
+		end
+	end
 
 	private
 	def entry_params

@@ -41,6 +41,13 @@ class ProjectsController < ApplicationController
 			end
 		end
 	end
+	def destroy
+		id = params[:id]
+		@project = Project.find_by(id: id)
+		if @project.destroy
+			redirect_to "/projects"
+		end
+	end
 
 # private means none of this information is not accessable outside of the controller
 	private
