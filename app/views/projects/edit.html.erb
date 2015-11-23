@@ -1,21 +1,6 @@
 <center>
 	<h1>Edit project</h1>
 	<a href="/projects">Back</a>
-	<%= form_for @project do |f| %>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
-		<% @project.errors[:name].each do |err| %>
-		<h1 class="err"><%= err %><h1>
-		<% end %><br>
-
-		<%= f.label :description %><br>
-		<%= f.text_area :description %>
-		<% @project.errors[:description].each do |err| %>
-		<h1 class="err"><%= err %><h1>
-		<% end %><br>
-
-		<button type="submit">Update project</button>
-	
-	<% end %>
+	<%= render "form" %>
 	
 </center>

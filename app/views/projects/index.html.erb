@@ -3,6 +3,11 @@
 	<a href="/projects/new">Make New project</a>
 	<ul>
 		<h1>List of projects<br>----------------------------</h1>
+		<% if flash[:notice].present? %>
+			<div class="messages">
+				<%= flash[:notice] %>
+			</div>
+		<% end %><br>
 		<% @projects_list.each do |project| %>
 			<h1>Name: <%= project.name %><br></h1>
 			<% if project.description != nil %>

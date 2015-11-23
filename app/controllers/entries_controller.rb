@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
 		@project = Project.find_by(id: id)
 		@entries = @project.entries.new(entry_params)
 		if @entries.save
+			flash[:notice] = "Entry created succesfully"
 			redirect_to("/projects/#{@project.id}/entries")
 		else
 			render "new"
@@ -55,6 +56,7 @@ class EntriesController < ApplicationController
 				redirect_to("/404")
 			else 
 				if  @entries.update(entry_params)
+					flash[:notice] = "Entry Updated succesfully"
 					redirect_to "/projects/#{@project.id}/entries"
 				else
 					render("edit")
@@ -74,6 +76,7 @@ class EntriesController < ApplicationController
 				redirect_to("/404")
 			else 
 				if @entries.destroy
+					flash[:notice] = "Entry was successfuly deleted"
 					redirect_to "/projects/#{@project.id}/entries"
 				end
 			end

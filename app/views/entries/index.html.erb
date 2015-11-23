@@ -4,7 +4,12 @@
 	<a href="/projects">Projects</a>
 	<h2><%= @project.name %> <br>-------------------------<br> Entries:</h2>
 	<ul>
-		
+
+		<% if flash[:notice].present? %>
+			<div class="messages">
+				<%= flash[:notice] %>
+			</div>
+		<% end %><br>
 		<% @entries.each do |entry|%>
 			Date: <%= entry.date %><br>
 			<%= entry.hours %> hours<br>
@@ -12,7 +17,7 @@
 			<a href="/projects/<%= @project.id %>/entries/<%= entry.id %>/edit">Update entry</a><br><br>
 			<%= button_to "Delete", "/projects/#{@project.id}/entries/#{entry.id}", method: :delete, data: {confirm: "Are you sure you want to delete this entry?"}%><br>
 			--------------------------------------<br>
-
+			
 		<% end %>
 		
 	</ul>

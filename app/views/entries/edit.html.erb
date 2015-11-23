@@ -1,29 +1,9 @@
 <center>
 	<h1>Timetracking tool</h1>
 		<a href="/">Home</a><br>
-		<a href="/projects">Projects</a>
+		<a href="/projects">Projects</a><br>
+		<a href="/projects/<%=@project.id%>/entries">Back</a>
 	<h3><%= @project.name %></h3>
-
-	<%= form_for [@project, @entries] do |f| %>
-		<%= f.label :hours %><br>
-		<%= f.text_field :hours %>
-		<% @entries.errors[:hours].each do |err| %>
-		<h1 class="err"><%= err %><h1>
-		<% end %><br>
-
-		<%= f.label :minutes %><br>
-		<%= f.text_field :minutes %>
-		<% @entries.errors[:minutes].each do |err| %>
-		<h1 class="err"><%= err %><h1>
-		<% end %><br>
-
-		<%= f.label :date %><br>
-		<%= f.date_field :date %>
-		<% @entries.errors[:date].each do |err| %>
-		<h1 class="err"><%= err %><h1>
-		<% end %><br>
-
-		<button type="submit">Update time entry</button>
-	<% end %>
-
+	
+	<%= render("form") %>
 </center
